@@ -57,7 +57,7 @@ app.get('/api/students', (req, res) => {
     for (for i of studentDesk) {
       console.log('studentdesk')
     }
-    rollbar.errorHandler('not a function')
+    rollbar.error('not a function')
   })
 })
 
