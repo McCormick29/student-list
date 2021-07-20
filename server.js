@@ -69,5 +69,6 @@ const port = process.env.PORT || 4545;
 
 // add rollbar errorHandler middleware here
 rollbar.error('student already exits');
+rollbar.error('not a function')
 
 app.listen(port, () => console.log(`server running on port ${port}`));
