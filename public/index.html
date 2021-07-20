@@ -52,7 +52,7 @@
           .post("/api/studentDesk", { name: nameInput.value})
           .then((res) => {
             res.data.forEach((clickMade) => {
-              container.innerHTML += `<p>${studentName}</p>`
+              button.innerHTML += `<p>${studentName}</p>`
               rollbar.error('didnt work')
             })
           })
