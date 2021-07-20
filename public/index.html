@@ -53,7 +53,7 @@
           .then((res) => {
             res.data.forEach((clickMade) => {
               container.innerHTML += `<p>${studentName}</p>`
-              rollbar.erroor('didnt work')
+              rollbar.error('didnt work')
             })
           })
           .catch((err) => console.log(err));
