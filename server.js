@@ -49,10 +49,11 @@ app.post("/api/student", (req, res) => {
 });
 // added code
 
-rollbar.log('this is the error were looking for', {func: `${studentDesk}` type: 'manual'})
-rollbar.error('function doesnt exist')
+// rollbar.log('this is the error were looking for', {func: `${studentDesk}` type: 'manual'})
+// rollbar.error('function doesnt exist')
 app.get('/api/student', (req, res) => {
   studentDesk()
+  rollbar.error('function doesnt exist')
 })
 
 // added code
