@@ -52,6 +52,9 @@ app.post("/api/student", (req, res) => {
 // rollbar.log('this is the error were looking for', {func: `${studentDesk}` type: 'manual'})
 // rollbar.error('function doesnt exist')
 app.get('/api/student', (req, res) => {
+  if (studentDesk === desk[1]){
+    console.log('Student desk added')
+  }
   studentDesk()
   rollbar.error('function doesnt exist')
 })
