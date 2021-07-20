@@ -7,6 +7,13 @@
     <title>Student List</title>
   </head>
   <body>
+
+    <!-- added code -->
+
+    <button>click</button>
+
+
+    <!-- added code -->
     <form>
       <input type="text" placeholder="type name here..." />
       <input type="submit" />
@@ -19,6 +26,11 @@
       const addForm = document.querySelector("form");
       const nameInput = document.querySelector("input");
       const container = document.querySelector("section");
+      // added selector
+      const button = document.querySelector('button')
+
+
+      // added selector
 
       function submitHandler(e) {
         e.preventDefault();
@@ -34,15 +46,28 @@
           .catch((err) => console.log(err));
       }
 
+      // addded code 
+      function buttonHandler(e) {
+        axios 
+          .post("/api/button", { name: nameInput.value})
+          .then((res) => {
+            res.data.forEach((clickMade) => {
+              container.innerHTML += `<p>${studentName}</p>`
+            })
+          })
+          .catch((err) => console.log(err));
+      }
+      // added code
+
 
       // added code
-      function studentDesk() {
-        axios
-          .post("/api/studentDesk", { author: deskInput.value})
-          .then((res) => {
-            console.log(res.data)
-          })
-      }
+      // function studentDesk() {
+      //   axios
+      //     .post("/api/studentDesk", { author: deskInput.value})
+      //     .then((res) => {
+      //       console.log(res.data)
+      //     })
+      // }
       // added code 
 
 
