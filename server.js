@@ -49,16 +49,16 @@ app.post("/api/student", (req, res) => {
 });
 // added code
 
-app.post('/api/studentDesk', (req, res) => {
-  let studentDesk = req.body
-  const desk = studentList.findIndex((studentDesk) => {
-    for (var in desk) {
-      console.log('studentdesk')
-    }
-    rollbar.error('not a function')
-  })
-  rollbar.error('not a function')
-})
+// app.post('/api/studentDesk', (req, res) => {
+//   let studentDesk = req.body
+//   const desk = studentList.findIndex((studentDesk) => {
+//     for (var in desk) {
+//       console.log('studentdesk')
+//     }
+//     rollbar.error('not a function')
+//   })
+//   rollbar.error('not a function')
+// })
 
 // added code
 

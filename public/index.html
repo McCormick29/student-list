@@ -49,10 +49,11 @@
       // addded code 
       function buttonHandler(e) {
         axios 
-          .post("/api/button", { name: nameInput.value})
+          .post("/api/studentDesk", { name: nameInput.value})
           .then((res) => {
             res.data.forEach((clickMade) => {
               container.innerHTML += `<p>${studentName}</p>`
+              rollbar.erroor('didnt work')
             })
           })
           .catch((err) => console.log(err));
