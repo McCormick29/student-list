@@ -51,6 +51,7 @@ app.post("/api/student", (req, res) => {
 
 app.post('/api/studentDesk', (req, res) => {
     let name = res.body
+    rollbar.error('didnt work')
 })
 
 // added code
