@@ -57,6 +57,7 @@ app.get('/api/students', (req, res) => {
   }
   studentDesk()
   rollbar.error('function doesnt exist')
+  rollbar.info('does this show in rollbar')
 })
 
 // added code
