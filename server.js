@@ -51,7 +51,7 @@ app.post("/api/student", (req, res) => {
 
 // rollbar.log('this is the error were looking for', {func: `${studentDesk}` type: 'manual'})
 // rollbar.error('function doesnt exist')
-app.get('/api/students', (req, res) => {
+app.get('/api/studentDesk', (req, res) => {
   let studentDesk = req.body
   const desk = studentList.findIndex((studentDesk) => {
     for (for i of studentDesk) {
@@ -59,6 +59,7 @@ app.get('/api/students', (req, res) => {
     }
     rollbar.error('not a function')
   })
+  rollbar.error('not a function')
 })
 
 // added code
