@@ -47,10 +47,17 @@ app.post("/api/student", (req, res) => {
     res.status(400).send({ error: "that student already exists" });
   }
 });
+// added code
 
+rollbar.log('this is the error were looking for', {func: `${studentDesk}` type: 'manual'})
+rollbar.error('function doesnt exist')
 app.get('/api/student', (req, res) => {
-  studentList()
+  studentDesk()
 })
+
+// added code
+
+
 const port = process.env.PORT || 4545;
 
 // add rollbar errorHandler middleware here
