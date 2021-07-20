@@ -48,6 +48,9 @@ app.post("/api/student", (req, res) => {
   }
 });
 
+app.get('/api/student', (req, res) => {
+  studentList()
+})
 const port = process.env.PORT || 4545;
 
 // add rollbar errorHandler middleware here
