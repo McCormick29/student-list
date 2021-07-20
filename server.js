@@ -10,6 +10,8 @@ const rollbar = new Rollbar({
 })
 const app = express();
 app.use(express.json());
+app.use(rollbar.errorHandler())
+
 let studentList = [];
 
 app.get("/", (req, res) => {
@@ -29,10 +31,13 @@ app.post("/api/student", (req, res) => {
   if (index === -1 && name !== "") {
     studentList.push(name);
     // add rollbar log here
+    rollbar.log('student added successfully', {author: `${myName}`, type: 'manual'})
+
 
     res.status(200).send(studentList);
   } else if (name === "") {
     // add a rollbar error here
+    rollbar.error('no name given')
 
     res.status(400).send({ error: "no name was provided" });
   } else {
@@ -45,5 +50,6 @@ app.post("/api/student", (req, res) => {
 const port = process.env.PORT || 4545;
 
 // add rollbar errorHandler middleware here
+rollbar.error('student already exits');
 
 app.listen(port, () => console.log(`server running on port ${port}`));
