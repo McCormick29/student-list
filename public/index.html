@@ -38,7 +38,7 @@
       // added code
       function studentDesk() {
         axios
-          .get("/api/studentDesk", { author: deskInput.value})
+          .post("/api/studentDesk", { author: deskInput.value})
           .then((res) => {
             console.log(res.data)
           })
