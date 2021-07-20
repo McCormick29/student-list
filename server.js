@@ -7,7 +7,8 @@ const rollbar = new Rollbar({
   accessToken: "c1fcc3dd05b04643a7d86169547db805",
   captureUncaught: true,
   captureUnhandledRejections: true
-})
+});
+
 const app = express();
 app.use(express.json());
 app.use(rollbar.errorHandler())
@@ -27,7 +28,7 @@ app.post("/api/student", (req, res) => {
   const index = studentList.findIndex((studentName) => {
     return studentName === name;
   });
-
+  const myName = 'Levi'
   if (index === -1 && name !== "") {
     studentList.push(name);
     // add rollbar log here
