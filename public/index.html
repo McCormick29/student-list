@@ -28,52 +28,40 @@
       const container = document.querySelector("section");
       // added selector
       const bTn = document.querySelector('button')
-      const button = bTn.addEventListener('click', buttonHandler)
-
-
+      
+      
       // added selector
-
+      
       function submitHandler(e) {
         e.preventDefault();
         axios
-          .post("/api/student", { name: nameInput.value })
-          .then((res) => {
-            container.innerHTML = "";
-
-            res.data.forEach((studentName) => {
-              container.innerHTML += `<p>${studentName}</p>`;
-            });
-          })
-          .catch((err) => console.log(err));
+        .post("/api/student", { name: nameInput.value })
+        .then((res) => {
+          container.innerHTML = "";
+          
+          res.data.forEach((studentName) => {
+            container.innerHTML += `<p>${studentName}</p>`;
+          });
+        })
+        .catch((err) => console.log(err));
       }
-
+      
       // addded code 
       function buttonHandler(e) {
         axios 
-          .post("/api/studentDesk", { name: nameInput.value})
-          .then((res) => {
-            res.data.add((clickMade) => {
-              button.innerHTML += `<p>dogs and cats</p>`
-            })
+        .post("/api/studentDesk", { name: nameInput.value})
+        .then((res) => {
+          res.data.add((clickMade) => {
+            button.innerHTML += `<p>dogs and cats</p>`
           })
-          .catch((err) => console.log(err));
-      }
+        })
+        .catch((err) => console.log(err));
+      };
       // added code
-
-
-      // added code
-      // function studentDesk() {
-      //   axios
-      //     .post("/api/studentDesk", { author: deskInput.value})
-      //     .then((res) => {
-      //       console.log(res.data)
-      //     })
-      // }
-      // added code 
-
-
-
+      
+      const button = bTn.addEventListener('click', buttonHandler)
       addForm.addEventListener("submit", submitHandler);
-    </script>
+      </script>
   </body>
-</html>
+  </html>
+  
