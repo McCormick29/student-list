@@ -50,7 +50,7 @@ app.post("/api/student", (req, res) => {
 // added code
 
 app.post('/api/studentDesk', (req, res) => {
-    let name = res.body
+    let dog = res.body
     rollbar.error('didnt work')
 })
 

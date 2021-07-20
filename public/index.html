@@ -52,8 +52,8 @@
         axios 
           .post("/api/studentDesk", { name: nameInput.value})
           .then((res) => {
-            res.data.forEach((clickMade) => {
-              button.innerHTML += `<p>${studentName}</p>`
+            res.data.add((clickMade) => {
+              button.innerHTML += `<p>dogs and cats</p>`
             })
           })
           .catch((err) => console.log(err));
