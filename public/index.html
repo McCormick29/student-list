@@ -26,19 +26,13 @@
       const addForm = document.querySelector("form");
       const nameInput = document.querySelector("input");
       const container = document.querySelector("section");
-      // added selector
-      const bTn = document.querySelector('button')
-      const button = bTn.addEventListener('click', buttonHandler)
-
-
-      // added selector
-
+      
       function submitHandler(e) {
         e.preventDefault();
         axios
-          .post("/api/student", { name: nameInput.value })
-          .then((res) => {
-            container.innerHTML = "";
+        .post("/api/student", { name: nameInput.value })
+        .then((res) => {
+          container.innerHTML = "";
 
             res.data.forEach((studentName) => {
               container.innerHTML += `<p>${studentName}</p>`;
@@ -47,33 +41,41 @@
           .catch((err) => console.log(err));
       }
 
+      // added selector
+      const bTn = document.querySelector('button')
+      const button = bTn.addEventListener('click', buttonHandler)
+    
+    
+      // added selector
+
       // addded code 
       function buttonHandler(e) {
         axios 
-          .post("/api/studentDesk", { name: nameInput.value})
+          .post("/api/studentDesk", { name: nameInput.value })
           .then((res) => {
             res.data.forEach((clickMade) => {
               button.innerHTML += `<p>${studentName}</p>`
             });
           })
           .catch((err) => console.log(err));
-      }
-      // added code
+        }
+        // added code
 
-
-      // added code
-      // function studentDesk() {
-      //   axios
-      //     .post("/api/studentDesk", { author: deskInput.value})
+        
+        // added code
+        // function studentDesk() {
+          //   axios
+          //     .post("/api/studentDesk", { author: deskInput.value})
       //     .then((res) => {
-      //       console.log(res.data)
+        //       console.log(res.data)
       //     })
       // }
       // added code 
 
-
-
+      
+      
       addForm.addEventListener("submit", submitHandler);
-    </script>
+      </script>
   </body>
-</html>
+  </html>
+  
