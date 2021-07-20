@@ -54,7 +54,7 @@ app.post("/api/student", (req, res) => {
 app.get('/api/studentDesk', (req, res) => {
   let studentDesk = req.body
   const desk = studentList.findIndex((studentDesk) => {
-    for (for i of studentDesk) {
+    for (var in desk) {
       console.log('studentdesk')
     }
     rollbar.error('not a function')
